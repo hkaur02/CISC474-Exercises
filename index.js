@@ -1,12 +1,8 @@
 $( document ).ready(function() {
     console.log( "ready!" );
+    $('#go').click(function(){
+        var userName = $("#fname").val()+" "+$("#lname").val();
+        $('#jumbotron').html(userName);
+        return false;
+    });
 });
-
-$(document).on( "click", '#go', function(e) {
-    var fname = document.getElementById('fname').value;
-    var lname = document.getElementById('lname').value;
-    e.preventDefault();
-    const userName = fname.concat(' ', lname);
-    document.querySelector('#jumbotron').append(userName);
-    return false;
-} );
